@@ -12,7 +12,6 @@ function getComputerChoice(){
 }
 
 function playRound(computerChoice,humanChoice){
-    // humanChoice = humanChoice.toLowerCase();
     ans = "";
     if(computerChoice == humanChoice ){
       ans = "Both picked the same "+humanChoice;
@@ -30,6 +29,7 @@ function playRound(computerChoice,humanChoice){
 }
 function game(){
   para.textContent="";
+  let humanChoice= document.querySelector('input[name=selection]:checked').id;
   var textOutput = playRound(getComputerChoice(),humanChoice)
   outputStatement.textContent = textOutput;
     outputScore.textContent=`Computer score: ${computerScore}  Player score: ${playerScore}`;
@@ -51,19 +51,8 @@ let computerScore = 0;
 const btn = document.querySelector("#playbutton");
 btn.addEventListener("click",game);
 
-const rockInput = document.querySelector(".rock");
-const paperInput = document.querySelector(".paper");
-const scissorInput = document.querySelector(".scissor");
 const outputStatement = document.querySelector(".output div");
 const outputScore = document.querySelector(".output p");
 const para = document.createElement("p");
 outputScore.parentNode.appendChild(para);
-
-let inputArr = [rockInput,paperInput,scissorInput];
-let humanChoice="";
-inputArr.forEach((a)=>{
-  a.addEventListener("click",()=>{
-    a.classList.toggle("act");
-    humanChoice = a.classList.value;});
-});
 
