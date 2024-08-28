@@ -7,11 +7,7 @@ body{
     font-size: 1.5rem;
     text-align: center;
 }
-span{
+label{
     font-size: 3rem;
     margin:0.5rem;
-
-}
-.act{
-    background: green;
 }
